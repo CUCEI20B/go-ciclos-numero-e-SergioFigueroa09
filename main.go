@@ -1,7 +1,27 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-func main()  {
-	fmt.Println("Hola Mundo!") // eliminar esta línea
+func fact(n int) (result int) {
+	if n > 0 {
+		result = n * fact(n-1)
+		return result
+	}
+	return 1
+}
+
+func main() {
+	var temp int
+	var nume float64
+
+	nume = 1
+	fmt.Scan(&temp)
+
+	for i := 1; i <= temp; i++ {
+		nume = nume + (1 / float64(fact(i)))
+	}
+
+	fmt.Println(nume)
 }
